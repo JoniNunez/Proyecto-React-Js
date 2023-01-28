@@ -6,6 +6,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // estilos
 import './index.css';
@@ -13,6 +14,9 @@ import './index.css';
 // componentes
 import App from './App';
 import NavBar from './components/navbar/NavBar.js'
+import Home from './components/home/Home'
+import AboutUs from './components/aboutUs/AboutUs'
+import Contacto from './components/contacto/Contacto';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import Footer from './components/footer/Footer';
 
@@ -26,9 +30,18 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavBar></NavBar>
-    <ItemListContainer></ItemListContainer>
-    <Footer></Footer>
+
+    <BrowserRouter>
+      <NavBar/>
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+          <Route exact path='/servicios' element={<ItemListContainer greeting='Estamos en Servicios' />} />
+          <Route exact path='/sobremi' element={<AboutUs/>} />
+          <Route exact path='/contacto' element={<Contacto/>} />
+        </Routes>
+      <Footer/>
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 

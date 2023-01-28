@@ -3,27 +3,21 @@
 ###############################################*/
 
 //Modulos
-
 //Estilos
-import './ItemListContainer.css'
-
+import './modeloC.css'
 //Componentes
-import ItemList from '../itemList/ItemList'
-
 //Core
 
 /*#############################################
                  Logica
 ###############################################*/
-const ItemListContainer = (props) => {//Funcion constructora
-
+const modeloC = () => {//Funcion constructora
 
     return(
         
-        <div className='main-section'>
-            <p>{props.greeting}</p>
-            <ItemList />
-        </div>
+        <p >
+           modeloC
+        </p>
         
     )
 
@@ -32,7 +26,4 @@ const ItemListContainer = (props) => {//Funcion constructora
 /*#############################################
                  Exportacion
 ###############################################*/
-export default ItemListContainer
-
-
-
+export default modeloC
