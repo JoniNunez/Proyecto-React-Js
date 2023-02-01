@@ -20,7 +20,7 @@ const ItemListContainer = (props) => {//Funcion constructora
 
     return(
         
-        <div className='main-section'>
+        <div className='main-section container'>
             <p>{props.greeting}</p>
             <ItemList />
         </div>

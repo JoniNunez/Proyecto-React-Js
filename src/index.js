@@ -35,7 +35,7 @@ root.render(
       <NavBar/>
         <Routes>
           <Route exact path='/' element={<Home/>} />
-          <Route exact path='/servicios' element={<ItemListContainer greeting='Estamos en Servicios' />} />
+          <Route exact path='/servicios' element={<ItemListContainer/>} />
           <Route exact path='/sobremi' element={<AboutUs/>} />
           <Route exact path='/contacto' element={<Contacto/>} />
         </Routes>

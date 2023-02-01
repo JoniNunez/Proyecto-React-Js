@@ -44,9 +44,10 @@ useEffect(()=>{
 
     return(
         
-        <div>
-            <p>Este es el item List</p>
+        <div className='container'>
+            <div className='d-flex flex-wrap justify-content-center'>
             {productos}
+            </div>
         </div>
         
     )
