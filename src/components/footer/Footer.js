@@ -18,7 +18,7 @@ function Footer() {
         <div className="col-md-4 d-flex align-items-center">
           <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
           </a>
-          <span>© 2022 Freelance video editor</span>
+          <span>© 2023 Freelance video editor</span>
         </div>
       </footer>
     </div>

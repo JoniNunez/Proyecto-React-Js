@@ -9,7 +9,7 @@ import { useState, useEffect} from 'react'
 import './ItemList.css'
 
 //Componentes
-import Item from '../item/Item'
+import {Item} from '../item/Item'
 
 
 //Core
@@ -17,45 +17,18 @@ import Item from '../item/Item'
 /*#############################################
                  Logica
 ###############################################*/
-const ItemList = (props) => {//Funcion constructora
- 
-    const [productos,setProductos] = useState([])
-
-
-
-    //preguntar categoria
-    //preguntar cuantos queremos traer
-    //ordear alfabeticamente
-
-//Nuesta Api de productos
-// ------- archivo JSON => '../../misProductos.json'
-
-useEffect(()=>{
-
-        fetch('https://fakestoreapi.com/products')
-        .then(res=>res.json())
-        .then(json => setProductos(json.map(productos => <Item key={productos.id} id={"producto" + productos.id} data={productos}/>)))
-        
-},[])
-
-
-    //Tenemos un retraso de informacion
-
+export const ItemList = ({items})=>{
 
     return(
-        
-        <div className='container'>
-            <div className='d-flex flex-wrap justify-content-center'>
-            {productos}
-            </div>
+        <div className="estilos-listado">
+            <div style={{width:"100%"}}>item list</div>
+            {
+                items.map(producto=>(
+                    // <Link key={producto.id} to={`/item/${producto.id}`}>
+                        <Item key={producto.id} item={producto}/>
+                    // </Link>
+                ))
+            }
         </div>
-        
     )
-
 }
-
-/*#############################################
-                 Exportacion
-###############################################*/
-export default ItemList
-

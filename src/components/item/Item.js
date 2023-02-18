@@ -3,37 +3,28 @@
 ###############################################*/
 
 //Modulos
+import { Link } from 'react-router-dom'
+
 //Estilos
 import './Item.css'
-
+import Card from 'react-bootstrap/Card';
+/* import { Link } from 'react-router-dom'; */
 //Componentes
-import ItemCount from '../itemCount/ItemCount'
 
 //Core
 
 /*#############################################
                  Logica
 ###############################################*/
-const Item = (props) => {//Funcion constructora
-
-    const { title, category, description, price, id} = props.data
-
-    return (
-        <div className='col-5 m-2 d-flex'>
-            <div className='card text-center justify-content-center align-items-center'>
-                <p>{category}</p>
-                <p>{title}</p>
-                <p>{description}</p>
-                <p>{price}</p>
-                <ItemCount stock="5" />
-            </div>
+export const Item = ({item})=>{
+    return(
+        <div className="tarjeta-producto">
+            <img src={item.pictureUrl} alt={item.title}/>
+            <h4>{item.title}</h4>
+            <p>$ {item.price}</p>
+            <Link to={`/item/${item.id}`}>
+                <button className='boton-ver'>Ver detalle...</button>
+            </Link>
         </div>
-
     )
-
 }
-
-/*#############################################
-                 Exportacion
-###############################################*/
-export default Item
