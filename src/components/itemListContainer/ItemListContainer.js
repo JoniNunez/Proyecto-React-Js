@@ -27,7 +27,7 @@ export const ItemListContainer = ()=>{
     useEffect(()=>{
         const getData = async()=>{
             //1.Creamos una consulta que vamos a realizar a la base de datos
-            const queryRef = tipoProducto ? query(collection(db,"listaServicios") , where("category","==",tipoProducto)) : collection(db,"listaServicios");
+            const queryRef = tipoProducto ? query(collection(db,"listaProductos") , where("category","==",tipoProducto)) : collection(db,"listaProductos");
             //2.Hacer la consulta
             const response = await getDocs(queryRef);
             const docsInfo = response.docs.map(doc=>{
@@ -37,16 +37,16 @@ export const ItemListContainer = ()=>{
                 }
                 return newDoc
             });
-            // console.log(docsInfo);
+            //console.log(docsInfo);
             setProductos(docsInfo);
             // console.log("doc",response.docs[0]);
             // console.log("data",response.docs[0].data());
-            // const newDoc = {
-            //     id:response.docs[0].id,
+            //const newDoc = {
+            //    id:response.docs[0].id,
             //     ...response.docs[0].data()
-            // }
-            // console.log(newDoc)
-        }
+            //}
+            //console.log(newDoc)
+        };
         getData();
     },[tipoProducto])
 

@@ -12,53 +12,30 @@ import './ItemCount.css'
 /*#############################################
                  Logica
 ###############################################*/
-const ItemCount = (props) => {//Funcion constructora
+export const ItemCount = ({stock, initial, onAdd})=>{
+    const [count, setCount] = useState(initial);
 
-    //props.stock = "7"
-    //No puede restar menos de 0
-    //No puede sumar mas de la cantidad maxima en stock
-
-    //Agregar un manejo de Estado
-    //useState
-    const [count, setCount] = useState(0)
-
-    //Funciones de sumar uno con un maximo de stock
-
-    const addOne = () => {
-        if (count < props.stock) {
-            setCount(count + 1)
-            props.guardarCantidadAComprar(count)
+    const decrementar = ()=>{
+        if(count>1){
+            setCount(count-1)
         }
     }
 
-
-
-
-    //Funcion de restar uno al contador seteando un minimo
-    const disOne = () => {
-        if (count > 0) {
-            setCount(count - 1)
-            props.guardarCantidadAComprar(count)
+    const incrementar = ()=>{
+        if(count<stock){
+            setCount(count+1)
         }
-
     }
 
-    return (
-
-        <div className='box-count'>
-            <div className='box-count-children'>
-                <button onClick={disOne} className="btn-dis">-</button>
-                <p >{count}</p>
-                <button onClick={addOne} className="btn-add">+</button>
+    return(
+        <div className='estilosContador d-flex justify-content-center align-items-center'>
+            <p className='m-3' >Stock disponible: {stock}</p>
+            <div className='contenedorControles d-flex m-2 align-items-center'>
+                <button disabled={stock===0} onClick={decrementar} className='botonControl m-2'>-</button>
+                <p className='m-2' >{count}</p>
+                <button disabled={stock===0} onClick={incrementar} className='botonControl m-2'>+</button>
             </div>
+            <button disabled={stock === 0} className='botonAgregar' onClick={()=>onAdd(count)}>Agregar al carrito</button>
         </div>
-
     )
-
 }
-
-/*#############################################
-                 Exportacion
-###############################################*/
-
-export default ItemCount

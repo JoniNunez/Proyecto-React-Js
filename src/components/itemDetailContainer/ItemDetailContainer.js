@@ -27,13 +27,13 @@ export const ItemDetailContainer = ()=>{
 
     useEffect(()=>{
         const getProducto = async()=>{
-            const queryRef = doc(db,"listaServicios",productId);
+            const queryRef = doc(db,"listaProductos",productId);
             const response = await getDoc(queryRef);
             const newDoc = {
                 id:response.id,
                 ...response.data()
             }
-            console.log(newDoc)
+            // console.log(newDoc)
             setItem(newDoc);
         }
         getProducto();
@@ -41,7 +41,7 @@ export const ItemDetailContainer = ()=>{
 
     return(
         <div className="item-detail-container">
-            <p style={{width:"100%", color: "white"}}>item detail container</p>
+            <p>item detail container</p>
             <ItemDetail item={item}/>
         </div>
     )

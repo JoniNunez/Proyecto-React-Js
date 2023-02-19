@@ -10,7 +10,7 @@ import './ItemDetail.css'
 //Componentes
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import  ItemCount  from '../itemCount/ItemCount';
+import  {ItemCount}  from '../itemCount/ItemCount';
 import {Link} from 'react-router-dom';
 
 //Core
@@ -35,9 +35,10 @@ export const ItemDetail = ({item})=>{
             </div>
             <div className='img-container'>
                 <h4>{item.title}</h4>
+                <p>{item.description}</p>
                 <h5>$ {item.price}</h5>
             </div>
-            <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+            <ItemCount initial={1} stock={5} onAdd={onAdd}/>
             {
                 quantity>0 &&
                 <Link to="/cart">

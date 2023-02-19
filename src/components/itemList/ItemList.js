@@ -10,6 +10,7 @@ import './ItemList.css'
 
 //Componentes
 import {Item} from '../item/Item'
+// import { Link } from 'react-router-dom'
 
 
 //Core
@@ -24,9 +25,9 @@ export const ItemList = ({items})=>{
             <div style={{width:"100%"}}>item list</div>
             {
                 items.map(producto=>(
-                    // <Link key={producto.id} to={`/item/${producto.id}`}>
+                     //<Link key={producto.id} to={`/item/${producto.id}`}>
                         <Item key={producto.id} item={producto}/>
-                    // </Link>
+                     //</Link>
                 ))
             }
         </div>

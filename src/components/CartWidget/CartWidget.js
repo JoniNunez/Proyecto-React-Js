@@ -1,6 +1,8 @@
 import {Link} from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import Carrito from "../../img/Carrito.png";
+import './CartWidget.css'
 
 export const CartWidget = ()=>{
     const {getTotalProducts, productCartList} = useContext(CartContext);
@@ -9,14 +11,14 @@ export const CartWidget = ()=>{
         <div>
             {
                 productCartList.length>0 &&
-                <>
+                <div>
                     <Link to="/cart">
-                        {/* <img src={Carrito} alt="mario" style={{width:20}}/> */}
+                        <img src={Carrito} alt="Carrito"/>
                     </Link>
-                    <span style={{backgroundColor: 'white', borderRadius:"50%", width:"10px", heigth:"10px", fontSize:"10px", color:"black"}}>
+                    <span className='Numero' >
                         {getTotalProducts()}
                     </span>
-                </>
+                </div>
             }
         </div>
     )

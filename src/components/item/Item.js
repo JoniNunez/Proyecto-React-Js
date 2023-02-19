@@ -21,6 +21,7 @@ export const Item = ({item})=>{
         <div className="tarjeta-producto">
             <img src={item.pictureUrl} alt={item.title}/>
             <h4>{item.title}</h4>
+            <p>{item.description}</p>
             <p>$ {item.price}</p>
             <Link to={`/item/${item.id}`}>
                 <button className='boton-ver'>Ver detalle...</button>

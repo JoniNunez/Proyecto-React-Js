@@ -28,7 +28,7 @@ export const CartContainer = () => {
 
   const updatePrice = async()=>{
     try {
-      const queryRef = doc(db, "listaServicios","5QQR7IIpcbL8BEA8UaPp");
+      const queryRef = doc(db, "listaProductos","5QQR7IIpcbL8BEA8UaPp");
       await updateDoc(queryRef,{price:111});
       console.log("producto actualizado");
     } catch (error) {

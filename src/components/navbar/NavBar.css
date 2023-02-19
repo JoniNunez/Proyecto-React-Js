@@ -6,10 +6,10 @@
     justify-content: space-around;
     align-items: center;
     padding: 10px 20px;
-    background-color: #101c2b;
+    background-color: #483d8b;
 }
 .nav-brand{
-    width: 80px;
+    width: 70px;
 }
 .navegacion{
     display: flex;
@@ -21,10 +21,13 @@
 .navegacion a{
     margin: 10px;
 }
+a{
+    text-decoration: none;
+}
 
 .claseActive{
-    color: red
+    color: white
 }
 .claseInactive{
-    color: blue;
+    color: #bcb9b4;
 }
